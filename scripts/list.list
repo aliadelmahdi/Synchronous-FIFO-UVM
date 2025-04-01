@@ -1,0 +1,77 @@
+# interface/
+# │── FIFO_defines.svh
+# │── FIFO_if.sv
+# │── shared_pkg.sv
+#
+# design/FIFO_design/
+# │── FIFO.v
+# │── golden_model.sv
+#
+# design/FIFO_Assertions/
+# │── FIFO_sva.sv
+#
+# objects/
+# │── FIFO_config.sv
+# ├── FIFO_seq_item.sv
+# ├── FIFO_main_sequence.sv
+# ├── FIFO_reset_sequence.sv
+#
+# top/test/enviroment/
+# │── FIFO_env.sv
+# │── scoreboard/FIFO_scoreboard.sv
+# │── coverage_collector/FIFO_coverage_collector.sv
+# │
+# ├── agent/
+# │   │── FIFO_agent.sv
+# │   │── sequencer/FIFO_sequencer.sv
+# │   │── driver/FIFO_driver.sv
+# │   │── monitor/FIFO_monitor.sv
+# │
+#
+# top/test/
+# │── test.sv
+#
+# top/
+# │── top.sv
+
+# List of files for the FIFO testbench
+
+# Interface files
+interface/FIFO_defines.svh
+interface/FIFO_if.sv
+interface/shared_pkg.sv
+
+# Design files
+design/FIFO_design/FIFO.v
+design/FIFO_design/golden_model.sv
+
+# Assertions
+design/FIFO_Assertions/FIFO_sva.sv
+
+# Testbench objects
+objects/FIFO_config.sv
+objects/FIFO_seq_item.sv
+objects/FIFO_main_sequence.sv
+objects/FIFO_reset_sequence.sv
+
+# Driver file
+top/test/enviroment/agent/driver/FIFO_driver.sv
+# Monitor file
+top/test/enviroment/agent/monitor/FIFO_monitor.sv
+# Sequencer file
+top/test/enviroment/agent/sequencer/FIFO_sequencer.sv
+# Agent file
+top/test/enviroment/agent/FIFO_agent.sv
+
+# Scoreboard and coverage
+top/test/enviroment/scoreboard/FIFO_scoreboard.sv
+top/test/enviroment/coverage_collector/FIFO_coverage_collector.sv
+
+# Environment file
+top/test/enviroment/FIFO_env.sv
+
+# Test file
+top/test/test.sv
+
+# Top-level file
+top/top.sv
