@@ -37,7 +37,7 @@ package FIFO_sequences_pkg;
 
         task body;
             `uvm_info("run_phase", "FIFO constraint mode 'normal_mode_c' started", UVM_LOW);
-            repeat (`TEST_ITER_MEDIUM) begin
+            repeat (`TEST_ITER_LARGE) begin
                 configure_seq_item();
                 `enable_constraint (normal_mode_c)
                 `disable_constraint (data_in_c)

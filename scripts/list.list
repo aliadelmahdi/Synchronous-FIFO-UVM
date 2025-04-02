@@ -16,12 +16,7 @@
 # │
 # ├── FIFO_sequences/
 # │   │── FIFO_reset_sequence.sv
-# │   │── FIFO_base_sequence.sv
-# │   │── FIFO_normal_mode_sequence.sv
-# │   │── FIFO_read_only_sequence.sv
-# │   │── FIFO_write_only_sequence.sv
-# │   │── FIFO_write_ph_read_pl_sequence.sv
-# │   │── FIFO_write_pl_read_ph_sequence.sv
+# │   │── FIFO_base_sequences.sv
 #
 # top/test/enviroment/
 # │── FIFO_env.sv

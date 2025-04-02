@@ -52,56 +52,56 @@ Branch Coverage for instance /\tb_top#DUT
     ----         ----                      -----     ------ 
   File design/FIFO_design/FIFO.v
 ------------------------------------IF Branch------------------------------------
-    26                                      5090     Count coming in to IF
-    26              1                        261     		if (!rst_n) begin
-    30              1                       1051     		else if (wr_en && fifo_size != FIFO_DEPTH) begin  // fixed this line for the designer
-    35              1                       3778     		else begin 
+    26                                     14353     Count coming in to IF
+    26              1                        793     		if (!rst_n) begin
+    30              1                       5288     		else if (wr_en && fifo_size != FIFO_DEPTH) begin  // fixed this line for the designer
+    35              1                       8272     		else begin 
 Branch totals: 3 hits of 3 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    41                                      2250     Count coming in to IF
-    41              1                        258     		if (!rst_n) begin
-    45              1                        676     		else if (rd_en && fifo_size != 0) begin
-                                            1316     All False Count
+    41                                     10211     Count coming in to IF
+    41              1                        789     		if (!rst_n) begin
+    45              1                       4296     		else if (rd_en && fifo_size != 0) begin
+                                            5126     All False Count
 Branch totals: 3 hits of 3 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    52                                      2489     Count coming in to IF
-    52              1                        259     		if (!rst_n) begin
-    55              1                       2230     		else begin
+    52                                     10668     Count coming in to IF
+    52              1                        790     		if (!rst_n) begin
+    55              1                       9878     		else begin
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    56                                      2230     Count coming in to IF
-    56              1                        660     			if	( ({wr_en, rd_en} == 2'b10) && !full) 
-    58              1                        337     			else if (({wr_en, rd_en} == 2'b01) && !empty)
-    60              1                        131     			else if (({wr_en, rd_en} == 2'b11) && empty) // fixed this line for the designer
-    62              1                         79     			else if (({wr_en, rd_en} == 2'b11) && full) // fixed this line for the designer
-                                            1023     All False Count
+    56                                      9878     Count coming in to IF
+    56              1                       2787     			if	( ({wr_en, rd_en} == 2'b10) && !full) 
+    58              1                       2164     			else if (({wr_en, rd_en} == 2'b01) && !empty)
+    60              1                        498     			else if (({wr_en, rd_en} == 2'b11) && empty) // fixed this line for the designer
+    62              1                        129     			else if (({wr_en, rd_en} == 2'b11) && full) // fixed this line for the designer
+                                            4300     All False Count
 Branch totals: 5 hits of 5 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    67                                      1274     Count coming in to IF
-    67              1                        135     	assign full = (fifo_size == FIFO_DEPTH)? 1 : 0;
-    67              2                       1139     	assign full = (fifo_size == FIFO_DEPTH)? 1 : 0;
+    67                                      5861     Count coming in to IF
+    67              1                        253     	assign full = (fifo_size == FIFO_DEPTH)? 1 : 0;
+    67              2                       5608     	assign full = (fifo_size == FIFO_DEPTH)? 1 : 0;
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    68                                      1274     Count coming in to IF
-    68              1                        234     	assign empty = (fifo_size == 0)? 1 : 0;
-    68              2                       1040     	assign empty = (fifo_size == 0)? 1 : 0;
+    68                                      5861     Count coming in to IF
+    68              1                        958     	assign empty = (fifo_size == 0)? 1 : 0;
+    68              2                       4903     	assign empty = (fifo_size == 0)? 1 : 0;
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    70                                      1274     Count coming in to IF
-    70              1                        162     	assign almostfull = (fifo_size == FIFO_DEPTH-1)? 1 : 0; // fixed this line for the designer
-    70              2                       1112     	assign almostfull = (fifo_size == FIFO_DEPTH-1)? 1 : 0; // fixed this line for the designer
+    70                                      5861     Count coming in to IF
+    70              1                        423     	assign almostfull = (fifo_size == FIFO_DEPTH-1)? 1 : 0; // fixed this line for the designer
+    70              2                       5438     	assign almostfull = (fifo_size == FIFO_DEPTH-1)? 1 : 0; // fixed this line for the designer
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    71                                      1274     Count coming in to IF
-    71              1                        273     	assign almostempty = (fifo_size == 1)? 1 : 0;
-    71              2                       1001     	assign almostempty = (fifo_size == 1)? 1 : 0;
+    71                                      5861     Count coming in to IF
+    71              1                       1390     	assign almostempty = (fifo_size == 1)? 1 : 0;
+    71              2                       4471     	assign almostempty = (fifo_size == 1)? 1 : 0;
 Branch totals: 2 hits of 2 branches = 100.00%
 
 
@@ -305,53 +305,53 @@ Statement Coverage for instance /\tb_top#DUT  --
     22                                               	reg [max_fifo_addr-1:0] wr_ptr, rd_ptr;
     23                                               	reg [max_fifo_addr:0] fifo_size;
     24                                               
-    25              1                       5090     	always @(posedge clk or negedge rst_n) begin
+    25              1                      14353     	always @(posedge clk or negedge rst_n) begin
     26                                               		if (!rst_n) begin
-    27              1                        261     			wr_ptr <= 0;
-    28              1                        261     			wr_ack <= 0; // fixed this line for the designer
+    27              1                        793     			wr_ptr <= 0;
+    28              1                        793     			wr_ack <= 0; // fixed this line for the designer
     29                                               		end
     30                                               		else if (wr_en && fifo_size != FIFO_DEPTH) begin  // fixed this line for the designer
-    31              1                       1051     			mem[wr_ptr] <= data_in;
-    32              1                       1051     			wr_ack <= 1;
-    33              1                       1051     			wr_ptr <= wr_ptr + 1;
+    31              1                       5288     			mem[wr_ptr] <= data_in;
+    32              1                       5288     			wr_ack <= 1;
+    33              1                       5288     			wr_ptr <= wr_ptr + 1;
     34                                               		end
     35                                               		else begin 
-    36              1                       3778     			wr_ack <= 0; 
+    36              1                       8272     			wr_ack <= 0; 
     37                                               		end
     38                                               	end
     39                                               
-    40              1                       2250     	always @(posedge clk or negedge rst_n) begin
+    40              1                      10211     	always @(posedge clk or negedge rst_n) begin
     41                                               		if (!rst_n) begin
-    42              1                        258     			rd_ptr <= 0;
-    43              1                        258     			data_out <= 0;	// fixed this line for the designer
+    42              1                        789     			rd_ptr <= 0;
+    43              1                        789     			data_out <= 0;	// fixed this line for the designer
     44                                               		end
     45                                               		else if (rd_en && fifo_size != 0) begin
-    46              1                        676     			data_out <= mem[rd_ptr];
-    47              1                        676     			rd_ptr <= rd_ptr + 1;
+    46              1                       4296     			data_out <= mem[rd_ptr];
+    47              1                       4296     			rd_ptr <= rd_ptr + 1;
     48                                               		end
     49                                               	end
     50                                               
-    51              1                       2489     	always @(posedge clk or negedge rst_n) begin
+    51              1                      10668     	always @(posedge clk or negedge rst_n) begin
     52                                               		if (!rst_n) begin
-    53              1                        259     			fifo_size <= 0;
+    53              1                        790     			fifo_size <= 0;
     54                                               		end
     55                                               		else begin
     56                                               			if	( ({wr_en, rd_en} == 2'b10) && !full) 
-    57              1                        660     				fifo_size <= fifo_size + 1;
+    57              1                       2787     				fifo_size <= fifo_size + 1;
     58                                               			else if (({wr_en, rd_en} == 2'b01) && !empty)
-    59              1                        337     				fifo_size <= fifo_size - 1;
+    59              1                       2164     				fifo_size <= fifo_size - 1;
     60                                               			else if (({wr_en, rd_en} == 2'b11) && empty) // fixed this line for the designer
-    61              1                        131     				fifo_size <= fifo_size + 1; // fixed this line for the designer
+    61              1                        498     				fifo_size <= fifo_size + 1; // fixed this line for the designer
     62                                               			else if (({wr_en, rd_en} == 2'b11) && full) // fixed this line for the designer
-    63              1                         79     				fifo_size <= fifo_size - 1; // fixed this line for the designer
+    63              1                        129     				fifo_size <= fifo_size - 1; // fixed this line for the designer
     64                                               		end
     65                                               	end
     66                                               
-    67              1                       1275     	assign full = (fifo_size == FIFO_DEPTH)? 1 : 0;
-    68              1                       1275     	assign empty = (fifo_size == 0)? 1 : 0;
+    67              1                       5862     	assign full = (fifo_size == FIFO_DEPTH)? 1 : 0;
+    68              1                       5862     	assign empty = (fifo_size == 0)? 1 : 0;
     69                                               	assign underflow = (empty && rd_en)? 1 : 0; 
-    70              1                       1275     	assign almostfull = (fifo_size == FIFO_DEPTH-1)? 1 : 0; // fixed this line for the designer
-    71              1                       1275     	assign almostempty = (fifo_size == 1)? 1 : 0;
+    70              1                       5862     	assign almostfull = (fifo_size == FIFO_DEPTH-1)? 1 : 0; // fixed this line for the designer
+    71              1                       5862     	assign almostempty = (fifo_size == 1)? 1 : 0;
 
 Toggle Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
