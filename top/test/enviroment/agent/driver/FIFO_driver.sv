@@ -2,7 +2,7 @@ package FIFO_driver_pkg;
 
     import  uvm_pkg::*,
             FIFO_config_pkg::*,
-            FIFO_main_sequence_pkg::*,
+            FIFO_sequences_pkg::*,
             FIFO_reset_sequence_pkg::*,
             FIFO_seq_item_pkg::*;
     `include "uvm_macros.svh"

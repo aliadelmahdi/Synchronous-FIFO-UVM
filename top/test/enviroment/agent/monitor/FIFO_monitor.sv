@@ -43,6 +43,15 @@ package FIFO_monitor_pkg;
                 response_seq_item.almostfull = fifo_if.almostfull;
                 response_seq_item.almostempty = fifo_if.almostempty;
                 response_seq_item.underflow = fifo_if.underflow;
+                // Golden Model
+                response_seq_item.data_out_ref = fifo_if.data_out_ref;
+                response_seq_item.wr_ack_ref = fifo_if.wr_ack_ref;
+                response_seq_item.overflow_ref = fifo_if.overflow_ref;
+                response_seq_item.full_ref = fifo_if.full_ref;
+                response_seq_item.empty_ref = fifo_if.empty_ref;
+                response_seq_item.almostfull_ref = fifo_if.almostfull_ref;
+                response_seq_item.almostempty_ref = fifo_if.almostempty_ref;
+                response_seq_item.underflow_ref = fifo_if.underflow_ref;
                 monitor_ap.write(response_seq_item);
                 `uvm_info("run_phase", response_seq_item.sprint(), UVM_HIGH)
             end

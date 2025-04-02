@@ -1,0 +1,44 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Tue Apr 01 13:41:21 2025
+[*]
+[dumpfile] "E:\Shared Folders\Uni\courses\Digital circuit\digital github codes\Done\FIFO -- UVM\FIFO--UVM\waves\waves\waves.vcd"
+[savefile] "E:\Shared Folders\Uni\courses\Digital circuit\digital github codes\Done\FIFO -- UVM\FIFO--UVM\waves\settings.gtkw"
+[timestart] 0
+[size] 1920 1009
+[pos] -1 -1
+*-5.000000 95 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_top.
+[sst_width] 197
+[signals_width] 183
+[sst_expanded] 1
+[sst_vpaned_height] 297
+@420
+tb_top.GLD.FIFO_DEPTH
+tb_top.GLD.FIFO_WIDTH
+@28
+tb_top.GLD.clk
+@29
+tb_top.GLD.rst_n
+@28
+tb_top.GLD.empty
+tb_top.GLD.almostempty
+tb_top.GLD.almostfull
+tb_top.GLD.full
+@24
+tb_top.GLD.fifo_size[7:0]
+@28
+tb_top.GLD.overflow
+tb_top.GLD.rd_en
+tb_top.GLD.underflow
+tb_top.GLD.wr_ack_temp
+tb_top.GLD.wr_en
+@22
+tb_top.GLD.data_in[15:0]
+tb_top.GLD.data_out[15:0]
+@28
+tb_top.GLD.wr_ack
+@420
+tb_top.GLD.max_fifo_addr
+[pattern_trace] 1
+[pattern_trace] 0

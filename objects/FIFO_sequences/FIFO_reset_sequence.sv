@@ -3,6 +3,7 @@ package FIFO_reset_sequence_pkg;
     import uvm_pkg::*,
            FIFO_seq_item_pkg::*;
     `include "uvm_macros.svh"
+    `include "FIFO_defines.svh"
            
     class FIFO_reset_sequence extends uvm_sequence #(FIFO_seq_item);
 
@@ -16,7 +17,10 @@ package FIFO_reset_sequence_pkg;
         task body;
             seq_item = FIFO_seq_item::type_id::create("seq_item");
             start_item(seq_item);
-                seq_item.rst = `LOW;
+                seq_item.rst_n = `LOW;
+                seq_item.data_in = `LOW;
+                seq_item.rd_en = `LOW;
+                seq_item.wr_en = `LOW;
             finish_item(seq_item);
         endtask
         

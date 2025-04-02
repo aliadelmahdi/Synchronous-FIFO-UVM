@@ -49,12 +49,43 @@ package FIFO_scoreboard_pkg;
         endfunction
 
         function void check_results(FIFO_seq_item seq_item_ch);
-            if ( seq_item_ch.Q != seq_item_ch.Q_ref
-                || seq_item_ch.valid != seq_item_ch.valid_ref
+            if (seq_item_ch.full != seq_item_ch.full_ref
+             || seq_item_ch.data_out != seq_item_ch.data_out_ref
+             || seq_item_ch.wr_ack != seq_item_ch.wr_ack_ref
+             || seq_item_ch.overflow != seq_item_ch.overflow_ref
+             || seq_item_ch.empty != seq_item_ch.empty_ref
+             || seq_item_ch.almostfull != seq_item_ch.almostfull_ref
+             || seq_item_ch.almostempty != seq_item_ch.almostempty_ref
+             || seq_item_ch.underflow != seq_item_ch.underflow_ref
                 ) begin
                 error_count++;
                 `uvm_error("run_phase","Comparison Error between the golden model and the DUT")
-                `uvm_info("run_phase", $sformatf("Encoder Transaction:\n%s", seq_item_ch.sprint()), UVM_MEDIUM)
+                `uvm_info("run_phase", $sformatf("FIFO Transaction:\n%s", seq_item_ch.sprint()), UVM_MEDIUM)
+                
+                if (seq_item_ch.full != seq_item_ch.full_ref)
+                `uvm_info("run_phase", $sformatf("Mismatch: full (DUT = %0b, REF = %0b)", seq_item_ch.full, seq_item_ch.full_ref), UVM_MEDIUM)
+        
+                if (seq_item_ch.data_out != seq_item_ch.data_out_ref)
+                    `uvm_info("run_phase", $sformatf("Mismatch: data_out (DUT = %0h, REF = %0h)", seq_item_ch.data_out, seq_item_ch.data_out_ref), UVM_MEDIUM)
+            
+                if (seq_item_ch.wr_ack != seq_item_ch.wr_ack_ref)
+                    `uvm_info("run_phase", $sformatf("Mismatch: wr_ack (DUT = %0b, REF = %0b)", seq_item_ch.wr_ack, seq_item_ch.wr_ack_ref), UVM_MEDIUM)
+            
+                if (seq_item_ch.overflow != seq_item_ch.overflow_ref)
+                    `uvm_info("run_phase", $sformatf("Mismatch: overflow (DUT = %0b, REF = %0b)", seq_item_ch.overflow, seq_item_ch.overflow_ref), UVM_MEDIUM)
+            
+                if (seq_item_ch.empty != seq_item_ch.empty_ref)
+                    `uvm_info("run_phase", $sformatf("Mismatch: empty (DUT = %0b, REF = %0b)", seq_item_ch.empty, seq_item_ch.empty_ref), UVM_MEDIUM)
+            
+                if (seq_item_ch.almostfull != seq_item_ch.almostfull_ref)
+                    `uvm_info("run_phase", $sformatf("Mismatch: almostfull (DUT = %0b, REF = %0b)", seq_item_ch.almostfull, seq_item_ch.almostfull_ref), UVM_MEDIUM)
+            
+                if (seq_item_ch.almostempty != seq_item_ch.almostempty_ref)
+                    `uvm_info("run_phase", $sformatf("Mismatch: almostempty (DUT = %0b, REF = %0b)", seq_item_ch.almostempty, seq_item_ch.almostempty_ref), UVM_MEDIUM)
+            
+                if (seq_item_ch.underflow != seq_item_ch.underflow_ref)
+                    `uvm_info("run_phase", $sformatf("Mismatch: underflow (DUT = %0b, REF = %0b)", seq_item_ch.underflow, seq_item_ch.underflow_ref), UVM_MEDIUM)
+            
             end
             else
                 correct_count++;

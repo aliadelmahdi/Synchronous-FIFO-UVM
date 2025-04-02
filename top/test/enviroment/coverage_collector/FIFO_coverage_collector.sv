@@ -2,7 +2,7 @@ package FIFO_coverage_pkg;
     import  uvm_pkg::*,
             FIFO_driver_pkg::*,
             FIFO_scoreboard_pkg::*,
-            FIFO_main_sequence_pkg::*,
+            FIFO_sequences_pkg::*,
             FIFO_reset_sequence_pkg::*,
             FIFO_seq_item_pkg::*,
             FIFO_sequencer_pkg::*,

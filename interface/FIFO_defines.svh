@@ -4,6 +4,8 @@
     // Basic logic levels
     `define LOW 0
     `define HIGH 1
+    `define OFF 0
+    `define ON 1
 
     // Simulation control
     `define DISABLE_FINISH 0  // Keep Questa simulation running
@@ -21,5 +23,11 @@
     // Timescale control
     `define TIME_UNIT 1ps
     `define TIME_PRECISION 1ps
+
+    // Constraint Mode ON/OFF
+    `define enable_constraint(constraint) seq_item.constraint.constraint_mode(`ON);
+    `define disable_constraints seq_item.constraint_mode(`OFF);
+    `define disable_constraint(constraint) seq_item.constraint.constraint_mode(`OFF);
+
 
 `endif

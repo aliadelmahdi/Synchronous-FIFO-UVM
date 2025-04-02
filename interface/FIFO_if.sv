@@ -1,7 +1,6 @@
-interface FIFO_if( bit clk);
+import shared_pkg::*;
 
-    parameter FIFO_WIDTH = 16;
-	parameter FIFO_DEPTH = 8;
+interface FIFO_if( input bit clk);
 
     logic [FIFO_WIDTH-1:0] data_in;
     logic rst_n, wr_en, rd_en;

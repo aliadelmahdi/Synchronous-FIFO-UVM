@@ -1,5 +1,6 @@
 # gtkwave waves/waves.vcd
 # vsim -c
+# cd {E:/Shared Folders/Uni/courses/Digital circuit/digital github codes/Done/FIFO -- UVM/FIFO--UVM}
 # do "scripts/run.tcl"
 vlib work
 vlog +incdir+./interface -f "scripts/list.list" -mfcu +cover -covercells
@@ -7,14 +8,14 @@ vlog +incdir+./interface -f "scripts/list.list" -mfcu +cover -covercells
 transcript on
 transcript file scripts/uvm_transcript.log
 # Start Simulation
-vsim -voptargs=+acc -sv_lib design/FIFO_design/golden_model_c work.tb_top -cover -classdebug -uvmcontrol=all
+vsim -voptargs=+acc work.tb_top -cover -classdebug -uvmcontrol=all
 
 log -r /*
 # Add signals to the wave window
 add wave /tb_top/DUT/*
 
 # Code Coverage
-coverage save top.ucdb -onexit -du work.priority_fifo
+coverage save top.ucdb -onexit -du work.FIFO
 
 vcd file waves/waves.vcd
 vcd add -r /* 
