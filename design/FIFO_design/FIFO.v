@@ -12,8 +12,8 @@ module FIFO(data_in, wr_en, rd_en, clk, rst_n, full, empty, almostfull, almostem
 	input clk, rst_n, wr_en, rd_en;
 	output reg [FIFO_WIDTH-1:0] data_out;
 	output reg wr_ack;
-	output full, empty, almostfull, almostempty, underflow;
-	output  overflow;
+	output full, empty, almostfull, almostempty;
+	output  overflow, underflow;
 	
 	localparam max_fifo_addr = $clog2(FIFO_DEPTH);
 
@@ -33,7 +33,7 @@ module FIFO(data_in, wr_en, rd_en, clk, rst_n, full, empty, almostfull, almostem
 			wr_ptr <= wr_ptr + 1;
 		end
 		else begin 
-			wr_ack <= 0; 
+			wr_ack <= 0;
 		end
 	end
 
@@ -45,7 +45,7 @@ module FIFO(data_in, wr_en, rd_en, clk, rst_n, full, empty, almostfull, almostem
 		else if (rd_en && fifo_size != 0) begin
 			data_out <= mem[rd_ptr];
 			rd_ptr <= rd_ptr + 1;
-		end
+		end 
 	end
 
 	always @(posedge clk or negedge rst_n) begin
@@ -65,10 +65,10 @@ module FIFO(data_in, wr_en, rd_en, clk, rst_n, full, empty, almostfull, almostem
 	end
 
 	assign full = (fifo_size == FIFO_DEPTH)? 1 : 0;
-	assign empty = (fifo_size == 0)? 1 : 0;
-	assign underflow = (empty && rd_en)? 1 : 0; 
+	assign empty = (fifo_size == 0 && rst_n)? 1 : 0; // fixed this line for the designer
 	assign almostfull = (fifo_size == FIFO_DEPTH-1)? 1 : 0; // fixed this line for the designer
 	assign almostempty = (fifo_size == 1)? 1 : 0;
-	assign overflow = (full & wr_en)? 1 : 0;	// fixed this line for the designer
+	assign overflow = (full & wr_en && rst_n)? 1 : 0;	// fixed this line for the designer
+	assign underflow = (empty && rd_en && rst_n)? 1 : 0;  // fixed this line for the designer
 
 endmodule

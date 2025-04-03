@@ -12,7 +12,6 @@ module tb_top;
         forever #(`CLK_PERIOD/2) clk = ~ clk;
     end
 
-    
     FIFO_env env_instance;
     FIFO_test test;
 
@@ -32,7 +31,6 @@ module tb_top;
         .overflow(fifo_if.overflow),
         .underflow(fifo_if.underflow)
     );
-
     golden_model GLD (
         .clk(fifo_if.clk),
         .rst_n(fifo_if.rst_n),
@@ -62,9 +60,12 @@ module tb_top;
         .almostempty(almostempty),
         .wr_ack(wr_ack),
         .overflow(overflow),
-        .underflow(underflow)
-    );    
+        .fifo_size(fifo_size),
+        .underflow(underflow),
+        .wr_ptr(wr_ptr),
+        .rd_ptr(rd_ptr)
 
+    );    
     initial begin
         uvm_top.set_report_verbosity_level(UVM_MEDIUM); // Set verbosity level
         uvm_top.finish_on_completion = `DISABLE_FINISH; // Prevent UVM from calling $finish

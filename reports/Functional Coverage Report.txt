@@ -7,16 +7,16 @@ Coverage Report by instance with details
 
 Covergroup Coverage:
     Covergroups                      1        na        na   100.00%
-        Coverpoints/Crosses         23        na        na        na
-            Covergroup Bins         80        80         0   100.00%
+        Coverpoints/Crosses         24        na        na        na
+            Covergroup Bins        112       112         0   100.00%
 ----------------------------------------------------------------------------------------------------------
 Covergroup                                             Metric       Goal       Bins    Status               
                                                                                                          
 ----------------------------------------------------------------------------------------------------------
  TYPE /FIFO_coverage_pkg/FIFO_coverage/FIFO_cov_grp 
                                                       100.00%        100          -    Covered              
-    covered/total bins:                                    80         80          -                      
-    missing/total bins:                                     0         80          -                      
+    covered/total bins:                                   112        112          -                      
+    missing/total bins:                                     0        112          -                      
     % Hit:                                            100.00%        100          -                      
     Coverpoint full_cp                                100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
@@ -110,10 +110,14 @@ Covergroup                                             Metric       Goal       B
         covered/total bins:                                 3          3          -                      
         missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
+    Cross rd_en_wr_en_data_out_cr                     100.00%        100          -    Covered              
+        covered/total bins:                                32         32          -                      
+        missing/total bins:                                 0         32          -                      
+        % Hit:                                        100.00%        100          -                      
  Covergroup instance \/FIFO_coverage_pkg::FIFO_coverage::FIFO_cov_grp  
                                                       100.00%        100          -    Covered              
-    covered/total bins:                                    80         80          -                      
-    missing/total bins:                                     0         80          -                      
+    covered/total bins:                                   112        112          -                      
+    missing/total bins:                                     0        112          -                      
     % Hit:                                            100.00%        100          -                      
     Coverpoint full_cp                                100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
@@ -127,10 +131,10 @@ Covergroup                                             Metric       Goal       B
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        bin FIFO_EMPTY                                   3559          1          -    Covered              
-        bin FIFO_NOT_EMPTY                              10442          1          -    Covered              
-        bin active_to_inactive                            958          1          -    Covered              
-        bin inactive_to_active                            957          1          -    Covered              
+        bin FIFO_EMPTY                                   3158          1          -    Covered              
+        bin FIFO_NOT_EMPTY                              10843          1          -    Covered              
+        bin active_to_inactive                            887          1          -    Covered              
+        bin inactive_to_active                            887          1          -    Covered              
     Coverpoint almostempty_cp                         100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
@@ -151,10 +155,10 @@ Covergroup                                             Metric       Goal       B
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        bin active                                       2885          1          -    Covered              
-        bin inactive                                    11116          1          -    Covered              
-        bin active_to_inactive                           1031          1          -    Covered              
-        bin inactive_to_active                           1031          1          -    Covered              
+        bin active                                       2670          1          -    Covered              
+        bin inactive                                    11331          1          -    Covered              
+        bin active_to_inactive                            996          1          -    Covered              
+        bin inactive_to_active                            996          1          -    Covered              
     Coverpoint wr_en_cp                               100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
@@ -234,11 +238,11 @@ Covergroup                                             Metric       Goal       B
         missing/total bins:                                 0          5          -                      
         % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
-            bin success_empty                             958          1          -    Covered              
-            bin assert_empty                              157          1          -    Covered              
-            bin deassert_empty                            958          1          -    Covered              
-            bin empty_active                              193          1          -    Covered              
-            bin empty_inactive                           6759          1          -    Covered              
+            bin success_empty                             778          1          -    Covered              
+            bin assert_empty                              887          1          -    Covered              
+            bin deassert_empty                            809          1          -    Covered              
+            bin empty_active                             3158          1          -    Covered              
+            bin empty_inactive                           6952          1          -    Covered              
     Cross wr_ack_full_wr_en_cr                        100.00%        100          -    Covered              
         covered/total bins:                                 6          6          -                      
         missing/total bins:                                 0          6          -                      
@@ -268,14 +272,14 @@ Covergroup                                             Metric       Goal       B
         missing/total bins:                                 0          1          -                      
         % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
-            bin success_underflow                        1031          1          -    Covered              
+            bin success_underflow                         996          1          -    Covered              
     Cross empty_almostempty_cr                        100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
-            bin empty_to_almostempty                      958          1          -    Covered              
-            bin almostempty_to_empty                      753          1          -    Covered              
+            bin empty_to_almostempty                      778          1          -    Covered              
+            bin almostempty_to_empty                      675          1          -    Covered              
     Cross almostfull_rd_en_cr                         100.00%        100          -    Covered              
         covered/total bins:                                 3          3          -                      
         missing/total bins:                                 0          3          -                      
@@ -300,6 +304,59 @@ Covergroup                                             Metric       Goal       B
             bin success_full                              221          1          -    Covered              
             bin full_active                              1735          1          -    Covered              
             bin full_inactive                            7004          1          -    Covered              
+    Cross rd_en_wr_en_data_out_cr                     100.00%        100          -    Covered              
+        covered/total bins:                                32         32          -                      
+        missing/total bins:                                 0         32          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <inactive_to_active,inactive_to_active,MAXIMUM> 
+                                                            1          1          -    Covered              
+            bin <active_to_inactive,inactive_to_active,MAXIMUM> 
+                                                            3          1          -    Covered              
+            bin <inactive,inactive_to_active,MAXIMUM> 
+                                                           24          1          -    Covered              
+            bin <active,inactive_to_active,MAXIMUM> 
+                                                           12          1          -    Covered              
+            bin <inactive_to_active,active_to_inactive,MAXIMUM> 
+                                                            4          1          -    Covered              
+            bin <active_to_inactive,active_to_inactive,MAXIMUM> 
+                                                            3          1          -    Covered              
+            bin <inactive,active_to_inactive,MAXIMUM> 
+                                                           23          1          -    Covered              
+            bin <active,active_to_inactive,MAXIMUM> 
+                                                           16          1          -    Covered              
+            bin <inactive_to_active,inactive,MAXIMUM> 
+                                                           13          1          -    Covered              
+            bin <active_to_inactive,inactive,MAXIMUM> 
+                                                           11          1          -    Covered              
+            bin <inactive,inactive,MAXIMUM>                32          1          -    Covered              
+            bin <active,inactive,MAXIMUM>                  72          1          -    Covered              
+            bin <inactive_to_active,active,MAXIMUM> 
+                                                           14          1          -    Covered              
+            bin <active_to_inactive,active,MAXIMUM> 
+                                                           14          1          -    Covered              
+            bin <inactive,active,MAXIMUM>                 103          1          -    Covered              
+            bin <active,active,MAXIMUM>                    28          1          -    Covered              
+            bin <inactive_to_active,inactive_to_active,ZERO> 
+                                                           71          1          -    Covered              
+            bin <active_to_inactive,inactive_to_active,ZERO> 
+                                                           98          1          -    Covered              
+            bin <inactive,inactive_to_active,ZERO>        206          1          -    Covered              
+            bin <active,inactive_to_active,ZERO>          163          1          -    Covered              
+            bin <inactive_to_active,active_to_inactive,ZERO> 
+                                                           47          1          -    Covered              
+            bin <active_to_inactive,active_to_inactive,ZERO> 
+                                                           73          1          -    Covered              
+            bin <inactive,active_to_inactive,ZERO>        189          1          -    Covered              
+            bin <active,active_to_inactive,ZERO>           94          1          -    Covered              
+            bin <inactive_to_active,inactive,ZERO>        145          1          -    Covered              
+            bin <active_to_inactive,inactive,ZERO>        166          1          -    Covered              
+            bin <inactive,inactive,ZERO>                  386          1          -    Covered              
+            bin <active,inactive,ZERO>                   1418          1          -    Covered              
+            bin <inactive_to_active,active,ZERO>          111          1          -    Covered              
+            bin <active_to_inactive,active,ZERO>          172          1          -    Covered              
+            bin <inactive,active,ZERO>                   1499          1          -    Covered              
+            bin <active,active,ZERO>                      242          1          -    Covered              
 
 COVERGROUP COVERAGE:
 ----------------------------------------------------------------------------------------------------------
@@ -308,8 +365,8 @@ Covergroup                                             Metric       Goal       B
 ----------------------------------------------------------------------------------------------------------
  TYPE /FIFO_coverage_pkg/FIFO_coverage/FIFO_cov_grp 
                                                       100.00%        100          -    Covered              
-    covered/total bins:                                    80         80          -                      
-    missing/total bins:                                     0         80          -                      
+    covered/total bins:                                   112        112          -                      
+    missing/total bins:                                     0        112          -                      
     % Hit:                                            100.00%        100          -                      
     Coverpoint full_cp                                100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
@@ -403,10 +460,14 @@ Covergroup                                             Metric       Goal       B
         covered/total bins:                                 3          3          -                      
         missing/total bins:                                 0          3          -                      
         % Hit:                                        100.00%        100          -                      
+    Cross rd_en_wr_en_data_out_cr                     100.00%        100          -    Covered              
+        covered/total bins:                                32         32          -                      
+        missing/total bins:                                 0         32          -                      
+        % Hit:                                        100.00%        100          -                      
  Covergroup instance \/FIFO_coverage_pkg::FIFO_coverage::FIFO_cov_grp  
                                                       100.00%        100          -    Covered              
-    covered/total bins:                                    80         80          -                      
-    missing/total bins:                                     0         80          -                      
+    covered/total bins:                                   112        112          -                      
+    missing/total bins:                                     0        112          -                      
     % Hit:                                            100.00%        100          -                      
     Coverpoint full_cp                                100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
@@ -420,10 +481,10 @@ Covergroup                                             Metric       Goal       B
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        bin FIFO_EMPTY                                   3559          1          -    Covered              
-        bin FIFO_NOT_EMPTY                              10442          1          -    Covered              
-        bin active_to_inactive                            958          1          -    Covered              
-        bin inactive_to_active                            957          1          -    Covered              
+        bin FIFO_EMPTY                                   3158          1          -    Covered              
+        bin FIFO_NOT_EMPTY                              10843          1          -    Covered              
+        bin active_to_inactive                            887          1          -    Covered              
+        bin inactive_to_active                            887          1          -    Covered              
     Coverpoint almostempty_cp                         100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
@@ -444,10 +505,10 @@ Covergroup                                             Metric       Goal       B
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
         % Hit:                                        100.00%        100          -                      
-        bin active                                       2885          1          -    Covered              
-        bin inactive                                    11116          1          -    Covered              
-        bin active_to_inactive                           1031          1          -    Covered              
-        bin inactive_to_active                           1031          1          -    Covered              
+        bin active                                       2670          1          -    Covered              
+        bin inactive                                    11331          1          -    Covered              
+        bin active_to_inactive                            996          1          -    Covered              
+        bin inactive_to_active                            996          1          -    Covered              
     Coverpoint wr_en_cp                               100.00%        100          -    Covered              
         covered/total bins:                                 4          4          -                      
         missing/total bins:                                 0          4          -                      
@@ -527,11 +588,11 @@ Covergroup                                             Metric       Goal       B
         missing/total bins:                                 0          5          -                      
         % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
-            bin success_empty                             958          1          -    Covered              
-            bin assert_empty                              157          1          -    Covered              
-            bin deassert_empty                            958          1          -    Covered              
-            bin empty_active                              193          1          -    Covered              
-            bin empty_inactive                           6759          1          -    Covered              
+            bin success_empty                             778          1          -    Covered              
+            bin assert_empty                              887          1          -    Covered              
+            bin deassert_empty                            809          1          -    Covered              
+            bin empty_active                             3158          1          -    Covered              
+            bin empty_inactive                           6952          1          -    Covered              
     Cross wr_ack_full_wr_en_cr                        100.00%        100          -    Covered              
         covered/total bins:                                 6          6          -                      
         missing/total bins:                                 0          6          -                      
@@ -561,14 +622,14 @@ Covergroup                                             Metric       Goal       B
         missing/total bins:                                 0          1          -                      
         % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
-            bin success_underflow                        1031          1          -    Covered              
+            bin success_underflow                         996          1          -    Covered              
     Cross empty_almostempty_cr                        100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
         % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
-            bin empty_to_almostempty                      958          1          -    Covered              
-            bin almostempty_to_empty                      753          1          -    Covered              
+            bin empty_to_almostempty                      778          1          -    Covered              
+            bin almostempty_to_empty                      675          1          -    Covered              
     Cross almostfull_rd_en_cr                         100.00%        100          -    Covered              
         covered/total bins:                                 3          3          -                      
         missing/total bins:                                 0          3          -                      
@@ -593,6 +654,59 @@ Covergroup                                             Metric       Goal       B
             bin success_full                              221          1          -    Covered              
             bin full_active                              1735          1          -    Covered              
             bin full_inactive                            7004          1          -    Covered              
+    Cross rd_en_wr_en_data_out_cr                     100.00%        100          -    Covered              
+        covered/total bins:                                32         32          -                      
+        missing/total bins:                                 0         32          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <inactive_to_active,inactive_to_active,MAXIMUM> 
+                                                            1          1          -    Covered              
+            bin <active_to_inactive,inactive_to_active,MAXIMUM> 
+                                                            3          1          -    Covered              
+            bin <inactive,inactive_to_active,MAXIMUM> 
+                                                           24          1          -    Covered              
+            bin <active,inactive_to_active,MAXIMUM> 
+                                                           12          1          -    Covered              
+            bin <inactive_to_active,active_to_inactive,MAXIMUM> 
+                                                            4          1          -    Covered              
+            bin <active_to_inactive,active_to_inactive,MAXIMUM> 
+                                                            3          1          -    Covered              
+            bin <inactive,active_to_inactive,MAXIMUM> 
+                                                           23          1          -    Covered              
+            bin <active,active_to_inactive,MAXIMUM> 
+                                                           16          1          -    Covered              
+            bin <inactive_to_active,inactive,MAXIMUM> 
+                                                           13          1          -    Covered              
+            bin <active_to_inactive,inactive,MAXIMUM> 
+                                                           11          1          -    Covered              
+            bin <inactive,inactive,MAXIMUM>                32          1          -    Covered              
+            bin <active,inactive,MAXIMUM>                  72          1          -    Covered              
+            bin <inactive_to_active,active,MAXIMUM> 
+                                                           14          1          -    Covered              
+            bin <active_to_inactive,active,MAXIMUM> 
+                                                           14          1          -    Covered              
+            bin <inactive,active,MAXIMUM>                 103          1          -    Covered              
+            bin <active,active,MAXIMUM>                    28          1          -    Covered              
+            bin <inactive_to_active,inactive_to_active,ZERO> 
+                                                           71          1          -    Covered              
+            bin <active_to_inactive,inactive_to_active,ZERO> 
+                                                           98          1          -    Covered              
+            bin <inactive,inactive_to_active,ZERO>        206          1          -    Covered              
+            bin <active,inactive_to_active,ZERO>          163          1          -    Covered              
+            bin <inactive_to_active,active_to_inactive,ZERO> 
+                                                           47          1          -    Covered              
+            bin <active_to_inactive,active_to_inactive,ZERO> 
+                                                           73          1          -    Covered              
+            bin <inactive,active_to_inactive,ZERO>        189          1          -    Covered              
+            bin <active,active_to_inactive,ZERO>           94          1          -    Covered              
+            bin <inactive_to_active,inactive,ZERO>        145          1          -    Covered              
+            bin <active_to_inactive,inactive,ZERO>        166          1          -    Covered              
+            bin <inactive,inactive,ZERO>                  386          1          -    Covered              
+            bin <active,inactive,ZERO>                   1418          1          -    Covered              
+            bin <inactive_to_active,active,ZERO>          111          1          -    Covered              
+            bin <active_to_inactive,active,ZERO>          172          1          -    Covered              
+            bin <inactive,active,ZERO>                   1499          1          -    Covered              
+            bin <active,active,ZERO>                      242          1          -    Covered              
 
 TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
 

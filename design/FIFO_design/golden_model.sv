@@ -8,7 +8,7 @@ module golden_model(data_in, wr_en, rd_en, clk, rst_n, full, empty, almostfull, 
 	output logic full, empty, almostfull, almostempty, underflow;
 	
 
-	logic [FIFO_WIDTH-1:0] fifo[$:7];
+	logic [FIFO_WIDTH-1:0] fifo[$:FIFO_DEPTH-1];
 	logic wr_ack_temp;
 	logic [max_fifo_addr:0] fifo_size;
 
@@ -30,11 +30,11 @@ module golden_model(data_in, wr_en, rd_en, clk, rst_n, full, empty, almostfull, 
 		end
 	end
 	assign full = (fifo.size()==FIFO_DEPTH) ? 1 : 0;
-	assign empty = (fifo.size()==0) ? 1 : 0;
+	assign empty = (fifo.size()==0 && rst_n) ? 1 : 0;
 	assign almostfull = (fifo.size()==FIFO_DEPTH-1) ? 1 : 0;
 	assign almostempty = (fifo.size()==1) ? 1 : 0;
 	
-	assign underflow = ( (fifo.size()==0) && rd_en ) ? 1 : 0;
+	assign underflow = ( (fifo.size()==0) && rd_en  && rst_n ) ? 1 : 0;
 	assign overflow = ( (fifo.size()==FIFO_DEPTH) && wr_en ) ? 1 : 0;
 	assign fifo_size = fifo.size();
 endmodule

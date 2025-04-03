@@ -1,6 +1,5 @@
 # gtkwave waves/waves.vcd
 # vsim -c
-# cd {E:/Shared Folders/Uni/courses/Digital circuit/digital github codes/Done/FIFO -- UVM/FIFO--UVM}
 # do "scripts/run.tcl"
 vlib work
 vlog +incdir+./interface -f "scripts/list.list" -mfcu +cover -covercells
@@ -30,4 +29,4 @@ coverage report -detail -cvg -directive  \
     /FIFO_coverage_pkg/FIFO_coverage/*
 quit -sim
 # Save Coverage Report
-vcover report top.ucdb -details -annotate -all -output "reports/Coverage Report - Code, Assertions, and Directives.txt"
+vcover report top.ucdb -details -annotate -all -output "reports/Coverage Report - Code and Assertions.txt"

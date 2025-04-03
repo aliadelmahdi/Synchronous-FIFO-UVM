@@ -118,9 +118,9 @@ package FIFO_coverage_pkg;
             wr_ack_empty_wr_en_cr: cross wr_ack_cp, empty_cp, wr_en_cp {
                 bins success_empty = binsof(empty_cp.active_to_inactive) && binsof (wr_ack_cp.active) && binsof(wr_en_cp.active);
                 
-                bins assert_empty  = binsof(empty_cp.inactive_to_active) && binsof (wr_en_cp.active);
+                bins assert_empty  = binsof(empty_cp.inactive_to_active) && binsof (wr_en_cp.inactive);
                 bins deassert_empty = binsof(empty_cp.active_to_inactive) && binsof (wr_en_cp.active);
-                bins empty_active = binsof(empty_cp.FIFO_EMPTY) && binsof (wr_en_cp.active);
+                bins empty_active = binsof(empty_cp.FIFO_EMPTY) && binsof (wr_en_cp.inactive);
                 bins empty_inactive = binsof(empty_cp.FIFO_NOT_EMPTY) && binsof (wr_en_cp.active);
                 option.cross_auto_bin_max = 0;
             }
@@ -180,6 +180,8 @@ package FIFO_coverage_pkg;
                 bins full_inactive = binsof(full_cp.FIFO_NOT_FULL) && binsof (rd_en_cp.active);
                 option.cross_auto_bin_max = 0;
             }
+            // Synchronous FIFO
+            rd_en_wr_en_data_out_cr: cross rd_en_cp, wr_en_cp, data_out_cp;
             
         endgroup
  
